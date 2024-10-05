@@ -1,0 +1,437 @@
+
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #f8f9fa; /* Adjust to fit the dark background */
+    background-color: linear-gradient(135deg, #f5f5f5, #eaeaea); /* Darker background for premium feel */
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #000; /* Darker when scrolling */
+}
+
+/* Navigation Styles */
+nav ul {
+    display: flex;
+    justify-content: center; /* Center navigation links */
+    gap: 30px; /* Add space between each navigation item */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #2c3e50; /* Darker text for a professional look */
+    text-decoration: none;
+    font-size: 1.15rem; /* Slightly larger font for clarity */
+    padding: 12px 25px; /* More padding for better spacing */
+    border-radius: 12px;
+    background-color: #f7f7f7; /* Light background for each link */
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+nav ul li a:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #3498db; /* Professional blue color */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3498db; /* Match hover color */
+    transition: width 0.4s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Underline effect on hover */
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Section Styles */
+section {
+    padding: 80px 0; /* Adjusted for better visual flow */
+}
+
+/* About Section */
+/* About Section */
+#about {
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea); /* Light gradient for a professional look */
+    text-align: center;
+    padding: 100px 20px; /* Spacious padding */
+    color: #2c3e50; /* Darker text for contrast */
+}
+
+#about h1 {
+    font-size: 3.2rem; /* Prominent name size */
+    font-weight: 700;
+    color: #3498db; /* Blue accent for the name */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#about p.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3498db; /* Accent color for title */
+    margin-bottom: 30px;
+}
+
+#about p.description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto; /* Center the description */
+    padding: 0 20px;
+    color: #555; /* Softer text for readability */
+}
+
+#about p.description::before {
+    content: '“';
+    font-size: 3rem;
+    vertical-align: top;
+    color: #3498db;
+    margin-right: 10px;
+}
+
+#about p.description::after {
+    content: '”';
+    font-size: 3rem;
+    vertical-align: bottom;
+    color: #3498db;
+    margin-left: 10px;
+}
+
+/* Skills Section */
+/* Skills Section */
+#skills {
+    background-color: #f7f7f7; /* Light background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    color: #3498db; /* Blue accent for section headings */
+    margin-bottom: 30px;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between each skill */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 900px; /* Limit width for better focus */
+}
+
+.skill-list li {
+    background-color: #eaeaea; /* Soft light background for each skill */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-list li:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+
+
+/* Achievements Section */
+#achievements {
+    background-color: #f0f0f0; /* Light neutral background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#achievements h2 {
+    font-size: 2.5rem;
+    color: #3498db; /* Blue accent for heading */
+    margin-bottom: 40px;
+}
+
+.achievement-list {
+    display: flex;
+    flex-direction: column; /* Stacked layout for achievements */
+    gap: 20px; /* Space between achievements */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px; /* Limit the width for readability */
+}
+
+.achievement-list li {
+    background-color: #eaeaea; /* Light background for each achievement */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #2c3e50; /* Darker text for readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-list li:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+.achievement-list li strong {
+    color: #3498db; /* Blue accent for achievement titles */
+}
+
+
+/* Projects Section */
+#projects {
+    background-color: #f7f7f7; /* Light neutral background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    color: #3498db; /* Blue accent for section heading */
+    margin-bottom: 40px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between project items */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px; /* Limit width for better focus */
+}
+
+.project-list li {
+    background-color: #eaeaea; /* Light background for each project */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-list li:hover {
+    transform: scale(1.05); /* Enlarge slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+.project-list li strong {
+    color: #3498db; /* Blue accent for project titles */
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f0f0f0; /* Light neutral background */
+    padding: 100px 20px; /* Ample padding for spacious feel */
+    text-align: center;
+    color: #2c3e50; /* Darker text for readability */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #3498db; /* Blue accent for heading */
+    margin-bottom: 40px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#contact a {
+    color: #3498db; /* Blue color for links */
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 2px solid #3498db; /* Border to match link color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact a:hover {
+    background-color: #3498db; /* Background color change on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+#contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+    margin-top: 40px;
+}
+
+#contact-icons a {
+    color: #3498db; /* Blue color for icons */
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#contact-icons a:hover {
+    color: #2980b9; /* Slightly darker blue on hover */
+    transform: scale(1.1); /* Small hover effect */
+}
+
+
+/* Footer Styles */
+/* Footer Styles */
+footer {
+    background-color: #2c3e50; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center; /* Center the footer links */
+    gap: 20px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline; /* Inline for horizontal layout */
+}
+
+.footer-links a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3498db; /* Change link color on hover */
+}
+
+#footer-icons {
+    margin-top: 15px; /* Space above icons */
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+}
+
+#footer-icons a {
+    color: #fff; /* White color for icons */
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#footer-icons a:hover {
+    color: #3498db; /* Change icon color on hover */
+    transform: scale(1.1); /* Small hover effect */
+}
+
+
+/* Resume Section */
+#resume {
+    background-color: #f0f0f0; /* Light neutral background */
+    color: #2c3e50; /* Darker text for readability */
+    padding: 100px 20px; /* Ample padding for spacious feel */
+    text-align: center;
+}
+
+#resume h2 {
+    font-size: 2.5rem;
+    color: #3498db; /* Blue accent for heading */
+    margin-bottom: 30px;
+}
+
+#resume p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3498db; /* Blue background for button */
+    color: #fff; /* White text for contrast */
+    border-radius: 50px; /* Rounded button for a modern look */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 2px solid transparent; /* Initial border for hover effect */
+}
+
+.btn-download:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border: 2px solid #3498db; /* Add border on hover for emphasis */
+}
+
+.btn-download:active {
+    transform: scale(0.98); /* Slight shrink on click for interactivity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
